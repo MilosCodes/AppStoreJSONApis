@@ -7,4 +7,5 @@ target 'AppStoreJSONApis' do
 
   # Pods for AppStoreJSONApis
 pod 'SnapKit', '~> 4.0'
+pod 'SDWebImage', '~> 5.0'
 end

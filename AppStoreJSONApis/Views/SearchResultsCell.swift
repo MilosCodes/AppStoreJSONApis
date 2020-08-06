@@ -22,13 +22,33 @@ class SearchResultCell: UICollectionViewCell {
     lazy var screenshot2ImageView = self.createScreenShotImageView()
     lazy var screenshot3ImageView = self.createScreenShotImageView()
     
+    var appResult: Result! {
+        didSet {
+            //MARK: - POPULATE OUR CELLS WITH OUR ITUNES API DATA
+            nameLabel.text = appResult.trackName
+            categoryLabel.text = appResult.primaryGenreName
+            ratingsLabel.text = "Ratings: \(appResult.averageUserRating ?? 0)"
+            
+            let url = URL(string: appResult.artworkUrl100)
+            appIconImageView.sd_setImage(with: url)
+            screenshot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+            
+            if appResult.screenshotUrls.count > 1 {
+            screenshot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+            }
+            
+            if appResult.screenshotUrls.count > 2 {
+            screenshot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+            }
+        }
+    }
     
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .yellow
+        backgroundColor = .white
         setupSearchResultCellItems()
         
     }
@@ -37,6 +57,11 @@ class SearchResultCell: UICollectionViewCell {
         
         let imageView = UIImageView()
         imageView.backgroundColor = .blue
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.cornerRadius = 8
+        imageView.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }
     
@@ -57,16 +82,16 @@ class SearchResultCell: UICollectionViewCell {
         getButton.setTitle("Get", for: .normal)
         getButton.setTitleColor(.blue, for: .normal)
         getButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        getButton.backgroundColor = .darkGray
+        getButton.backgroundColor = .lightGray
         getButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         getButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
         getButton.layer.cornerRadius = 12
         
         appIconImageView = UIImageView()
-        appIconImageView.backgroundColor = .red
         appIconImageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         appIconImageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         appIconImageView.layer.cornerRadius = 12
+        appIconImageView.clipsToBounds = true
         
         
     
