@@ -12,18 +12,56 @@ import SDWebImage
 fileprivate let appSearchCellId = "appSearchCellId"
 
 
-class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    fileprivate let enterSearchTermlabel: UILabel = {
+        let label = UILabel()
+        label.text = "please enter search term above..."
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .white
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: appSearchCellId)
-        fetchItunesApps()
+        
+        view.addSubview(enterSearchTermlabel)
+        enterSearchTermlabel.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        
+        setupSearchBar()
+//        fetchItunesApps()
+        
     }
     
+    //MARK: - THrottling the search
+    var timer: Timer?
+    fileprivate func setupSearchBar() {
+        //MARK: - UISearchBarDelegate in class to inherit
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
+            //MARK: - Fire my search
+            Service.shared.fetchApps(searchTerm: searchText) { (res, err) in
+                self.appResults = res
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        })
+        
+    }
     fileprivate var appResults = [Result]()
     
     //MARK: - Extract this function fetchItunesApps() outside of this controller file
@@ -31,7 +69,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     
     //MARK: - FetchingItunesApp()
     fileprivate func fetchItunesApps() {
-        Service.shared.fetchApps { (res, err) in
+        Service.shared.fetchApps(searchTerm: "twitter") { (res, err) in
             
             if let err = err {
                 print("failed to fetch apps:",err)
@@ -47,7 +85,11 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     
     
     //MARK: - NumberOfItemsInSection & CellForItemAt
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return appResults.count }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        enterSearchTermlabel.isHidden = appResults.count != 0
+        return appResults.count }
+    
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: appSearchCellId, for: indexPath) as! SearchResultCell
         let appResult = appResults[indexPath.row]
