@@ -129,12 +129,3 @@ class SearchResultCell: UICollectionViewCell {
     }
 }
 
-
-extension UILabel {
-    
-    func setupLabel() {
-        self.font =  UIFont.boldSystemFont(ofSize: 15)
-        self.textColor =  .black
-        
-    }
-}

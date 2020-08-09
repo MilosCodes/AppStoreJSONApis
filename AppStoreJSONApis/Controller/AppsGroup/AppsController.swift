@@ -11,14 +11,14 @@ import UIKit
 
 class AppsController: BaseListController {
     
-let cellId = "cellId"
+    let cellId = "cellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .white
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        view.backgroundColor = .white
+        collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
     }
     
     //MARK: - Number of Items in Section
@@ -27,8 +27,8 @@ let cellId = "cellId"
     //MARK: - Cell for item
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .brown
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
+        cell.backgroundColor = .white
         return cell
     }
     
@@ -36,7 +36,9 @@ let cellId = "cellId"
 
 //MARK: - Making Cell Bigger and Wider.
 extension AppsController: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 16, left: 0, bottom: 0, right: 0)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 250)
     }

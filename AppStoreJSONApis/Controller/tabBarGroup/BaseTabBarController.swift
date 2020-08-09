@@ -35,3 +35,32 @@ class BaseTabBarController: UITabBarController {
         return navController
     }
 }
+
+
+//if you want to do it programbatically you can do like this.
+
+class YourClassName: UIViewController {
+    
+    var button: UIButton!
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addButtonSubviewAndUI()
+    }
+
+fileprivate func addButtonSubviewAndUI() {
+    button.titleLabel?.lineBreakMode = .byWordWrapping
+    button.titleLabel?.numberOfLines = 0
+    button.titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 20, right: 20)
+    button.setTitle("Type some really really long title", for: .normal)
+    view.addSubview(button)
+    
+    // ADD CONSTRAINTS
+    button.snp.makeConstraints { (make) in
+        make.width.height.equalTo(40)
+        make.center.equalToSuperview()
+    }
+  }
+}

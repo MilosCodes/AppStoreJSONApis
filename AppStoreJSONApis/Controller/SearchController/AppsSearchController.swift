@@ -15,27 +15,30 @@ fileprivate let appSearchCellId = "appSearchCellId"
 class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-    fileprivate let enterSearchTermlabel: UILabel = {
-        let label = UILabel()
-        label.text = "please enter search term above..."
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        return label
-    }()
+    var enterSearchTermlabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         collectionView.backgroundColor = .white
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: appSearchCellId)
         
-        view.addSubview(enterSearchTermlabel)
-        enterSearchTermlabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
-        
+        searchLabelUI()
         setupSearchBar()
         fetchItunesApps()
         
+    }
+    
+    fileprivate func searchLabelUI() {
+        
+        enterSearchTermlabel = UILabel()
+        enterSearchTermlabel.text = "please enter search term above..."
+        enterSearchTermlabel.font = UIFont.boldSystemFont(ofSize: 20)
+        view.addSubview(enterSearchTermlabel)
+        
+        enterSearchTermlabel.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
     }
     
     //MARK: - THrottling the search
