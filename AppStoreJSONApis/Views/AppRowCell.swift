@@ -11,6 +11,8 @@ import UIKit
 
 class AppsRowCell: UICollectionViewCell {
     
+    var whiteView: UIView!
+    
     var imageView: UIImageView!
     var nameLabel: UILabel!
     var companyNameLabel: UILabel!
@@ -19,29 +21,32 @@ class AppsRowCell: UICollectionViewCell {
         super.init(frame: frame)
         
         backgroundColor = .white
-        
         setupAppsRowCellUI()
     }
     
     fileprivate func setupAppsRowCellUI() {
         
+        whiteView = UIView()
+        whiteView.backgroundColor = .white
+        addSubview(whiteView)
+        
         imageView = UIImageView(cornerRadius: 8)
+        imageView.backgroundColor = .red
         imageView.widthAnchor.constraint(equalToConstant: 54).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 54).isActive = true
-        addSubview(imageView)
         
         nameLabel = UILabel(text: "Name of the App", font: .boldSystemFont(ofSize: 20))
-        addSubview(nameLabel)
+        nameLabel.textColor = .black
         
         companyNameLabel = UILabel(text: "Company Name", font: .boldSystemFont(ofSize: 13))
-        addSubview(companyNameLabel)
+        companyNameLabel.textColor = .black
         
         getButton = UIButton(title: "GET")
         getButton.backgroundColor = UIColor(white: 0.95, alpha: 1)
         getButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         getButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
         getButton.layer.cornerRadius = 32 / 2
-        addSubview(getButton)
+        
         
         
         let stackView = UIStackView(arrangedSubviews: [
@@ -49,12 +54,16 @@ class AppsRowCell: UICollectionViewCell {
         ])
         stackView.distribution = .fillProportionally
         stackView.alignment = .center
-        addSubview(stackView)
+        whiteView.addSubview(stackView)
         stackView.spacing = 16
         stackView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().offset(4)
             make.right.equalToSuperview().offset(-4)
+        }
+        
+        whiteView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
     }
     
