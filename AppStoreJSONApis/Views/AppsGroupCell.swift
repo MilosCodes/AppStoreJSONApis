@@ -15,6 +15,8 @@ class AppsGroupCell: UICollectionViewCell {
     var titleLabel: UILabel!
     let horizontalController = AppsHorizontalController()
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
