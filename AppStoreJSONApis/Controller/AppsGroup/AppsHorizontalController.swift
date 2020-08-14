@@ -11,7 +11,7 @@ import UIKit
 
 fileprivate let appsHorizontalControllerId = "appsHorizontalControllerId"
 
-class AppsHorizontalController: BaseListController {
+class AppsHorizontalController: HorizontalSnappingController {
     
     
     var appGroup: AppGroup?
@@ -28,6 +28,8 @@ class AppsHorizontalController: BaseListController {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
+        
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return appGroup?.feed.results.count ?? 0 }

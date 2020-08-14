@@ -13,11 +13,12 @@ class AppsPageHeader: UICollectionReusableView {
     
     
     let appheaderHorizontalController = AppsHeaderHorizontalController()
+    var socialApps = [SocialApp]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
+    
         appheaderHorizontalController.view.backgroundColor = .purple
         addSubview(appheaderHorizontalController.view)
         
