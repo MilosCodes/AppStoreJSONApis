@@ -28,7 +28,7 @@ class AppsGroupCell: UICollectionViewCell {
     fileprivate func setupAppsGroupCellUI() {
         
         
-        titleLabel = UILabel(text: "Apps Section", font: .boldSystemFont(ofSize: 30))
+        titleLabel = UILabel(text: "Apps Section", font: .boldSystemFont(ofSize: 30), numberOfLines: 0)
         addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { (make) in

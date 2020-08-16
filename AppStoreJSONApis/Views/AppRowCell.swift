@@ -35,10 +35,10 @@ class AppsRowCell: UICollectionViewCell {
         imageView.widthAnchor.constraint(equalToConstant: 54).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 54).isActive = true
         
-        nameLabel = UILabel(text: "Name of the App", font: .boldSystemFont(ofSize: 20))
+        nameLabel = UILabel(text: "Name of the App", font: .boldSystemFont(ofSize: 20), numberOfLines: 0)
         nameLabel.textColor = .black
         
-        companyNameLabel = UILabel(text: "Company Name", font: .boldSystemFont(ofSize: 13))
+        companyNameLabel = UILabel(text: "Company Name", font: .boldSystemFont(ofSize: 13), numberOfLines: 0)
         companyNameLabel.textColor = .black
         
         getButton = UIButton(title: "GET")
