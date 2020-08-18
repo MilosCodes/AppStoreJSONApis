@@ -28,12 +28,14 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
     
     var app: Result?
     let detailCellId = "detailCellId"
+    let previewCellId = "previewCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         
         collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
+        collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: previewCellId)
         navigationItem.largeTitleDisplayMode = .never
     }
     
