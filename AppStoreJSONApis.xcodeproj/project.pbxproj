@@ -10,6 +10,9 @@
 		2B28F1D524E1810100959C7A /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28F1D424E1810100959C7A /* AppsHeaderCell.swift */; };
 		2B2CC5FE24E18DDD0062AB81 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */; };
 		2B2EE1EC24DC0A83008E1CA5 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EE1EB24DC0A83008E1CA5 /* SearchResult.swift */; };
+		2B30F8E324EF00FD0036CB48 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30F8E224EF00FC0036CB48 /* ReviewRowCell.swift */; };
+		2B30F8E524EF03700036CB48 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30F8E424EF03700036CB48 /* ReviewsController.swift */; };
+		2B30F8E724EF05250036CB48 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B30F8E624EF05250036CB48 /* ReviewCell.swift */; };
 		2B3FDBE424E044570065D3D0 /* AppRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FDBE324E044570065D3D0 /* AppRowCell.swift */; };
 		2B4C5BE624746260006692BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C5BE524746260006692BB /* AppDelegate.swift */; };
 		2B4C5BE824746260006692BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C5BE724746260006692BB /* SceneDelegate.swift */; };
@@ -42,6 +45,9 @@
 		2B28F1D424E1810100959C7A /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		2B2EE1EB24DC0A83008E1CA5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		2B30F8E224EF00FC0036CB48 /* ReviewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
+		2B30F8E424EF03700036CB48 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
+		2B30F8E624EF05250036CB48 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		2B3FDBE324E044570065D3D0 /* AppRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowCell.swift; sourceTree = "<group>"; };
 		2B4C5BE224746260006692BB /* AppStoreJSONApis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJSONApis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4C5BE524746260006692BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,10 +179,13 @@
 		2B86E12424E86FF30059B0B3 /* details */ = {
 			isa = PBXGroup;
 			children = (
+				2B30F8E624EF05250036CB48 /* ReviewCell.swift */,
 				2B86E12524E86FFE0059B0B3 /* AppDetailController.swift */,
 				2B7FABAE24E9CAA800C5986D /* AppDetailCell.swift */,
 				2BA16B2F24EC6AED00F17C77 /* PreviewCell.swift */,
 				2B7615CD24EDC5C000ED86D0 /* PreviewScreenshotsController.swift */,
+				2B30F8E224EF00FC0036CB48 /* ReviewRowCell.swift */,
+				2B30F8E424EF03700036CB48 /* ReviewsController.swift */,
 			);
 			path = details;
 			sourceTree = "<group>";
@@ -349,9 +358,11 @@
 				2BA16B3024EC6AED00F17C77 /* PreviewCell.swift in Sources */,
 				2B8860C024E6CEDA00D6FF74 /* SocialApp.swift in Sources */,
 				2BDCD8BB24DEFF7A0021368F /* AppsPageController.swift in Sources */,
+				2B30F8E524EF03700036CB48 /* ReviewsController.swift in Sources */,
 				2BBB067624DB452C005C1A5E /* VerticalStackView.swift in Sources */,
 				2B3FDBE424E044570065D3D0 /* AppRowCell.swift in Sources */,
 				2B4C5C0024746D45006692BB /* SearchResultsCell.swift in Sources */,
+				2B30F8E724EF05250036CB48 /* ReviewCell.swift in Sources */,
 				2B28F1D524E1810100959C7A /* AppsHeaderCell.swift in Sources */,
 				2B7615CE24EDC5C000ED86D0 /* PreviewScreenshotsController.swift in Sources */,
 				2B4C5BE624746260006692BB /* AppDelegate.swift in Sources */,
@@ -364,6 +375,7 @@
 				2B70134024E03C720006FD1C /* AppsHorizontalController.swift in Sources */,
 				2B7FABAF24E9CAA800C5986D /* AppDetailCell.swift in Sources */,
 				2B70133E24E03B7A0006FD1C /* extensions.swift in Sources */,
+				2B30F8E324EF00FD0036CB48 /* ReviewRowCell.swift in Sources */,
 				2B8860C224E720F900D6FF74 /* HorizontalSnappingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
