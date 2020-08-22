@@ -27,6 +27,7 @@
 		2B70134024E03C720006FD1C /* AppsHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B70133F24E03C720006FD1C /* AppsHorizontalController.swift */; };
 		2B7615CE24EDC5C000ED86D0 /* PreviewScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7615CD24EDC5C000ED86D0 /* PreviewScreenshotsController.swift */; };
 		2B7FABAF24E9CAA800C5986D /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7FABAE24E9CAA800C5986D /* AppDetailCell.swift */; };
+		2B80247B24F15F8C00B91BE2 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B80247A24F15F8C00B91BE2 /* Reviews.swift */; };
 		2B86E12624E86FFE0059B0B3 /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86E12524E86FFE0059B0B3 /* AppDetailController.swift */; };
 		2B8860C024E6CEDA00D6FF74 /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8860BF24E6CEDA00D6FF74 /* SocialApp.swift */; };
 		2B8860C224E720F900D6FF74 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8860C124E720F900D6FF74 /* HorizontalSnappingController.swift */; };
@@ -64,6 +65,7 @@
 		2B70133F24E03C720006FD1C /* AppsHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalController.swift; sourceTree = "<group>"; };
 		2B7615CD24EDC5C000ED86D0 /* PreviewScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotsController.swift; sourceTree = "<group>"; };
 		2B7FABAE24E9CAA800C5986D /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		2B80247A24F15F8C00B91BE2 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		2B86E12524E86FFE0059B0B3 /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		2B8860BF24E6CEDA00D6FF74 /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
 		2B8860C124E720F900D6FF74 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				2B2EE1EB24DC0A83008E1CA5 /* SearchResult.swift */,
 				2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */,
 				2B8860BF24E6CEDA00D6FF74 /* SocialApp.swift */,
+				2B80247A24F15F8C00B91BE2 /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				2B4C5BE824746260006692BB /* SceneDelegate.swift in Sources */,
 				2B70134024E03C720006FD1C /* AppsHorizontalController.swift in Sources */,
 				2B7FABAF24E9CAA800C5986D /* AppDetailCell.swift in Sources */,
+				2B80247B24F15F8C00B91BE2 /* Reviews.swift in Sources */,
 				2B70133E24E03B7A0006FD1C /* extensions.swift in Sources */,
 				2B30F8E324EF00FD0036CB48 /* ReviewRowCell.swift in Sources */,
 				2B8860C224E720F900D6FF74 /* HorizontalSnappingController.swift in Sources */,
