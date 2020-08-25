@@ -9,8 +9,7 @@
 
 import UIKit
 
-
-class AppFullScreenDescriptionCell: UITableViewCell {
+class AppFullscreenDescriptionCell: UITableViewCell {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
@@ -40,10 +39,10 @@ class AppFullScreenDescriptionCell: UITableViewCell {
         
         addSubview(descriptionLabel)
         descriptionLabel.fillSuperview(padding: .init(top: 0, left: 24, bottom: 0, right: 24))
-        
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
+    
 }
