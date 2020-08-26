@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1E475924F6F6B3009B63EF /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E475824F6F6B3009B63EF /* TodayItem.swift */; };
 		2B28F1D524E1810100959C7A /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B28F1D424E1810100959C7A /* AppsHeaderCell.swift */; };
 		2B2CC5FE24E18DDD0062AB81 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */; };
 		2B2EE1EC24DC0A83008E1CA5 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EE1EB24DC0A83008E1CA5 /* SearchResult.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		1AAF1D6CF258759A1B291EF9 /* Pods-AppStoreJSONApis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreJSONApis.release.xcconfig"; path = "Target Support Files/Pods-AppStoreJSONApis/Pods-AppStoreJSONApis.release.xcconfig"; sourceTree = "<group>"; };
+		2B1E475824F6F6B3009B63EF /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		2B28F1D424E1810100959C7A /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		2B2EE1EB24DC0A83008E1CA5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				2B2CC5FD24E18DDD0062AB81 /* AppGroup.swift */,
 				2B8860BF24E6CEDA00D6FF74 /* SocialApp.swift */,
 				2B80247A24F15F8C00B91BE2 /* Reviews.swift */,
+				2B1E475824F6F6B3009B63EF /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BDCD8BD24DF00640021368F /* BaseListController.swift in Sources */,
+				2B1E475924F6F6B3009B63EF /* TodayItem.swift in Sources */,
 				2B4C5BFA247462D7006692BB /* BaseTabBarController.swift in Sources */,
 				2B5C68B124DFE926003AC0B6 /* AppsGroupCell.swift in Sources */,
 				2B8860C424E724AD00D6FF74 /* BetterSnappingLayout.swift in Sources */,
