@@ -44,7 +44,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         let fullscreenView = appFullscreenController.view!
         fullscreenView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
         view.addSubview(fullscreenView)
-
+        
         addChild(appFullscreenController)
         
         self.appFullscreenController = appFullscreenController
@@ -55,7 +55,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         
         self.startingFrame = startingFrame
-
+        
         // auto layout constraint animations
         // 4 anchors
         fullscreenView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,16 +70,16 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         fullscreenView.layer.cornerRadius = 16
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-
+            
             self.topConstraint?.constant = 0
             self.leadingConstraint?.constant = 0
             self.widthConstraint?.constant = self.view.frame.width
             self.heightConstraint?.constant = self.view.frame.height
             
             self.view.layoutIfNeeded() // starts animation
-
+            
             self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-
+            
         }, completion: nil)
     }
     
@@ -112,9 +112,6 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
-//        cell.titleLabel
-//        cell.categoryLabel
-//        cell.imageView
         cell.todayItem = items[indexPath.item]
         return cell
     }
