@@ -79,6 +79,10 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.superview?.setNeedsLayout()
+    }
+    
     var appFullscreenController: AppFullscreenController!
     
     var topConstraint: NSLayoutConstraint?
@@ -90,8 +94,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         if items[indexPath.item].cellType == .multiple {
             let fullController = TodayMultipleAppsController(mode: .fullscreen)
-            fullController.results = self.items[indexPath.item].apps
-            present(fullController, animated: true)
+            fullController.apps = self.items[indexPath.item].apps
+            present(BackEnabledNavigationController(rootViewController: fullController), animated: true)
             return
         }
         
@@ -188,7 +192,30 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseTodayCell
         cell.todayItem = items[indexPath.item]
+        
+        (cell as? TodayMultipleAppCell)?.multipleAppsController.collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMultipleAppsTap)))
         return cell
+    }
+    
+    @objc fileprivate func handleMultipleAppsTap(gesture: UIGestureRecognizer) {
+        
+        let collectionView = gesture.view
+        
+        var superView = collectionView?.superview
+        
+        while superView != nil {
+            if let cell = superView as? TodayMultipleAppCell {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
+                    let fullController = TodayMultipleAppsController(mode: .fullscreen)
+                    let apps = self.items[indexPath.item].apps
+                    fullController.apps = apps
+                    present(BackEnabledNavigationController(rootViewController: fullController), animated: true)
+                return
+                    
+            }
+            superView = superView?.superview
+        }
+        print(collectionView)
     }
     
     static let cellSize: CGFloat = 500
