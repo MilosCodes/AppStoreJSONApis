@@ -36,7 +36,7 @@ class BaseTodayCell: UICollectionViewCell {
         self.backgroundView?.fillSuperview()
         self.backgroundView?.backgroundColor = .white
         self.backgroundView?.layer.cornerRadius = 16
-        self.backgroundView?.layer.shadowOpacity = 0.2
+        self.backgroundView?.layer.shadowOpacity = 0.1
         self.backgroundView?.layer.shadowRadius = 10
         self.backgroundView?.layer.shouldRasterize = true
         self.backgroundView?.layer.shadowOffset = .init(width: 0, height: 10)

@@ -13,6 +13,14 @@ class AppFullscreenController: UITableViewController {
     var dismissHandler: (() ->())?
     var todayItem: TodayItem?
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        if scrollView.contentOffset.y < 0 {
+            scrollView.isScrollEnabled = false
+            scrollView.isScrollEnabled = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +43,7 @@ class AppFullscreenController: UITableViewController {
             headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
             headerCell.clipsToBounds = true
             headerCell.todayCell.todayItem = todayItem
+            headerCell.todayCell.backgroundColor = nil
             headerCell.todayCell.layer.cornerRadius = 0
             return headerCell
         }
