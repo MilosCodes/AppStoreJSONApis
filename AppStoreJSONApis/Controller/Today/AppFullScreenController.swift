@@ -4,7 +4,7 @@
 //
 //  Created by Milos Milivojevic on 24/08/2020.
 //  Copyright © 2020 Milos Milivojevic. All rights reserved.
-//
+// 
 
 
 import UIKit
@@ -22,7 +22,10 @@ class AppFullscreenController: UIViewController, UITableViewDataSource, UITableV
         
         print(scrollView.contentOffset.y)
         
-        let translationY =  -120 - UIApplication.shared.statusBarFrame.height
+        let heightY = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        
+        let translationY =  -120 - heightY
+        
         let transform = scrollView.contentOffset.y > 100 ? CGAffineTransform(translationX: 0, y: translationY) : .identity
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
